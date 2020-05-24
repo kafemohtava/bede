@@ -9,5 +9,16 @@ class Expense(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text
+        #return self.text
+        return "{}-{}".format(self.date.date(), self.amount)
 
+class Income(models.Model):
+    text=models.CharField(max_length=500)
+    date=models.DateTimeField()
+    amount=models.BigIntegerField()
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+       #return "%s , %s"%(self.date.date(),self.amount)
+       #return "{}-{}".format(self.date.date(),self.amount)
+       pass
