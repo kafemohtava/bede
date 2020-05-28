@@ -1,0 +1,103 @@
+{% extends "template.html"%}
+{% load static %}
+
+{% block content %}
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <a href="www.jadi.net">
+          این برنامه به شدت و حدت در حال توسعه می باشد.
+       </a>
+    </div>
+  </div>
+</div>
+
+<div class="well well-sm">
+  <h3>بستون</h3>
+
+</div>
+
+<hr >
+
+<div class="row">
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">دفتر حساب و کتاب</h3>
+        </div>
+        <div class="panel-body">
+
+   <p> بستون یک سیستمی است که بتوان در آن قدم به فدم پروژه خود را تکمبل کنیم.
+   و محلی برای ثبت دخل و خرج ما باشد.</p>
+
+<p>
+    برای باز کردن اکانت روی لینک زیر کلیک کنید
+    <a href="accounts/register/"> به صفحه رجیستر بروید</a>
+</p>
+        </div>
+      </div>
+
+
+<br /><br />
+
+
+
+</div>
+
+
+
+
+</div>
+{% endblock %}
+
+
+{% block footer %}
+
+<script >
+$(document).ready(function () {
+        $(".subtaskinput").fadeOut(0);
+        $(".edittaskinput").fadeOut(0);
+        $('.fa-square-o').hover(function () {
+            $(this).addClass('fa-check-square-o');
+            $(this).removeClass('fa-square-o');
+        }, function () {
+            $(this).addClass('fa-square-o');
+            $(this).removeClass('fa-check-square-o');
+        });
+
+});
+
+function showsubtaskinput(elementid){
+  if ($('.btn-'+elementid).text() == '+') {
+    $('.subtask-'+elementid).fadeIn(250);
+    $('.subtask-'+elementid).focus();
+    $('.btn-'+elementid).text ('-');
+  }
+  else {
+    $('.subtask-'+elementid).fadeOut(250);
+    $('.btn-'+elementid).text ('+');
+  }
+  // دگمه رو عوض کنیم به منفی و اگر منفی رو زد المنت رو حذف کنیم
+  return 0;
+}
+
+function fadeout(elementid){
+    $('.edittask-'+elementid).fadeOut(250);
+}
+function showeditinput(elementid){
+    $('.edittask-'+elementid).fadeIn(250);
+    $('.edittask-'+elementid).focus();
+    return 0;
+}
+</script>
+
+<script type="text/javascript">
+$(".alert").fadeTo(10000, 500).slideUp(500, function(){
+    $(".alert").slideUp(10000);
+});
+</script>
+{% endblock %}
